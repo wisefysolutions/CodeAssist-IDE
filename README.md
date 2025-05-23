@@ -108,6 +108,10 @@ We welcome contributions! To contribute:
 
 ---
 
+## **Development**
+This project was created by Swytchz and Shox for Wisefy Solutions.
+
+
 ## **License**
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
