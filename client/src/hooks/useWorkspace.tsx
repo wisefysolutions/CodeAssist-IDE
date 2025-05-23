@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { File, Folder, ProjectStructure } from "@/lib/mockData";
 
 interface WorkspaceContextType {
