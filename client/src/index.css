@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --background: 245 100% 98%; /* #F5F9FF */
+  --foreground: 0 0% 10%; /* #1A1A1A */
+  
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 10%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 10%;
+  
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  
+  --primary: 210 100% 40%; /* #0066CC */
+  --primary-foreground: 210 40% 98%;
+  
+  --secondary: 210 100% 20%; /* #003366 */
+  --secondary-foreground: 210 40% 98%;
+  
+  --accent: 210 100% 65%; /* #4DA3FF */
+  --accent-foreground: 210 40% 98%;
+  
+  --destructive: 0 100% 50%;
+  --destructive-foreground: 210 40% 98%;
+  
+  --ring: 215 20.2% 65.1%;
+  
+  --radius: 0.5rem;
+
+  /* Custom colors */
+  --sidebar-background: 0 0% 100%;
+  --sidebar-foreground: 0 0% 10%;
+  --sidebar-primary: 210 100% 40%;
+  --sidebar-primary-foreground: 210 40% 98%;
+  --sidebar-accent: 210 100% 65%;
+  --sidebar-accent-foreground: 210 40% 98%;
+  --sidebar-border: 214.3 31.8% 91.4%;
+  --sidebar-ring: 215 20.2% 65.1%;
+  
+  --chart-1: 210 100% 40%;
+  --chart-2: 210 100% 65%;
+  --chart-3: 210 100% 20%;
+  --chart-4: 210 70% 55%;
+  --chart-5: 210 50% 40%;
+}
+
+.dark {
+  --background: 220 13% 18%; /* #1E1E2E */
+  --foreground: 220 13% 91%; /* #E4E6F1 */
+  
+  --muted: 223 13% 25%;
+  --muted-foreground: 215.4 16.3% 70%;
+  
+  --popover: 220 15% 20%; /* #292A3E */
+  --popover-foreground: 220 13% 91%;
+  
+  --card: 220 15% 20%;
+  --card-foreground: 220 13% 91%;
+  
+  --border: 223 13% 25%;
+  --input: 223 13% 25%;
+  
+  --primary: 210 100% 40%;
+  --primary-foreground: 210 40% 98%;
+  
+  --secondary: 210 100% 20%;
+  --secondary-foreground: 210 40% 98%;
+  
+  --accent: 210 100% 65%;
+  --accent-foreground: 210 40% 98%;
+  
+  --destructive: 0 63% 31%;
+  --destructive-foreground: 210 40% 98%;
+  
+  --ring: 223 13% 40%;
+  
+  --radius: 0.5rem;
+
+  /* Custom colors */
+  --sidebar-background: 220 15% 20%;
+  --sidebar-foreground: 220 13% 91%;
+  --sidebar-primary: 210 100% 40%;
+  --sidebar-primary-foreground: 210 40% 98%;
+  --sidebar-accent: 210 100% 65%;
+  --sidebar-accent-foreground: 210 40% 98%;
+  --sidebar-border: 223 13% 25%;
+  --sidebar-ring: 223 13% 40%;
+  
+  --chart-1: 210 100% 40%;
+  --chart-2: 210 100% 65%;
+  --chart-3: 210 100% 20%;
+  --chart-4: 210 70% 55%;
+  --chart-5: 210 50% 40%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Resizable panels */
+.resize-handle {
+  cursor: col-resize;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: transparent;
+  transition: background-color 0.2s;
+}
+.resize-handle:hover, .resize-handle.active {
+  background-color: rgba(77, 163, 255, 0.7);
+}
+
+/* Code editor line numbers */
+.line-numbers {
+  user-select: none;
+  text-align: right;
+  color: #858585;
+}
+
+/* Code highlighting */
+.code-keyword { color: #569CD6; }
+.code-string { color: #CE9178; }
+.code-comment { color: #6A9955; }
+.code-function { color: #DCDCAA; }
+.code-property { color: #9CDCFE; }
+
+.dark-transition {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.editor-container {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.file-tree-item {
+  @apply px-2 py-1 rounded cursor-pointer flex items-center;
+}
+
+.file-tree-item:hover {
+  @apply bg-accent/10 dark:bg-accent/20;
+}
+
+.file-tree-item.active {
+  @apply bg-accent/10 dark:bg-accent/20;
+}
